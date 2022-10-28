@@ -1,0 +1,2 @@
+module HomeBannersHelper
+end
