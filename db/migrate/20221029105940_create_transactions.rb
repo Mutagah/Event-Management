@@ -6,6 +6,7 @@ class CreateTransactions < ActiveRecord::Migration[7.0]
       t.string :ResponseDescription
       t.integer :ResponseCode
       t.string :CustomerMessage
+      t.integer :age
 
       t.timestamps
     end

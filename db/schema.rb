@@ -80,6 +80,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_29_105940) do
     t.string "ResponseDescription"
     t.integer "ResponseCode"
     t.string "CustomerMessage"
+    t.integer "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

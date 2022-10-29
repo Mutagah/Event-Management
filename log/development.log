@@ -6351,3 +6351,122 @@ Processing by TransactionsController#create as */*
 Completed 201 Created in 235ms (Views: 156.6ms | ActiveRecord: 58.1ms | Allocations: 20404)
 
 
+Started POST "/transactions" for ::1 at 2022-10-29 14:24:07 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TransactionsController#create as */*
+  Parameters: {"MerchantRequestID"=>"Hello", "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great", "transaction"=>{"MerchantRequestID"=>"Hello", "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great"}}
+[31mUnpermitted parameter: :transaction. Context: { controller: TransactionsController, action: create, request: #<ActionDispatch::Request:0x00007ff4b09a9208>, params: {"MerchantRequestID"=>"Hello", "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great", "controller"=>"transactions", "action"=>"create", "transaction"=>{"MerchantRequestID"=>"Hello", "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great"}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:7:in `create'
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO `transactions` (`MerchantRequestID`, `CheckoutRequestID`, `ResponseDescription`, `ResponseCode`, `CustomerMessage`, `created_at`, `updated_at`) VALUES ('Hello', 'Guys', 'You', 0, 'Great', '2022-10-29 11:26:00.978073', '2022-10-29 11:26:00.978073')[0m
+  ↳ app/controllers/transactions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (97.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:7:in `create'
+[active_model_serializers] Rendered TransactionSerializer with ActiveModelSerializers::Adapter::Attributes (1.24ms)
+Completed 201 Created in 113722ms (Views: 21.7ms | ActiveRecord: 100.9ms | Allocations: 98041)
+
+
+Started POST "/transactions" for ::1 at 2022-10-29 14:26:38 +0300
+Processing by TransactionsController#create as */*
+  Parameters: {"MerchantRequestID"=>"Hello", "Body"=>"Wait a minute", "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great", "transaction"=>{"MerchantRequestID"=>"Hello", "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 8880ms (Views: 16.5ms | ActiveRecord: 0.9ms | Allocations: 2361)
+
+
+Started POST "/transactions" for ::1 at 2022-10-29 14:27:06 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TransactionsController#create as */*
+  Parameters: {"MerchantRequestID"=>"Hello", "Body"=>"Wait a minute", "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great", "transaction"=>{"MerchantRequestID"=>"Hello", "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 18ms (Views: 1.2ms | ActiveRecord: 0.8ms | Allocations: 15901)
+
+
+Started POST "/transactions" for ::1 at 2022-10-29 14:30:07 +0300
+Processing by TransactionsController#create as */*
+  Parameters: {"MerchantRequestID"=>"Hello", "Body"=>{"age"=>23}, "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great", "transaction"=>{"MerchantRequestID"=>"Hello", "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 296)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('4823492743188718095', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateTransactions (20221029105940)
+  [1m[35m (281.9ms)[0m  [1m[35mDROP TABLE `transactions`[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (85.7ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20221029105940'[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT RELEASE_LOCK('4823492743188718095')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (79.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('4823492743188718095', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateTransactions (20221029105940)
+  [1m[35m (356.3ms)[0m  [1m[35mCREATE TABLE `transactions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `MerchantRequestID` varchar(255), `CheckoutRequestID` varchar(255), `ResponseDescription` varchar(255), `ResponseCode` int, `CustomerMessage` varchar(255), `age` int, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20221029105940')[0m
+  [1m[36mTRANSACTION (57.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('4823492743188718095')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('4823492743188718095', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateTransactions (20221029105940)
+  [1m[35m (270.0ms)[0m  [1m[35mDROP TABLE `transactions`[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (52.5ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20221029105940'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('4823492743188718095')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (92.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('4823492743188718095', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateTransactions (20221029105940)
+  [1m[35m (395.4ms)[0m  [1m[35mCREATE TABLE `transactions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `MerchantRequestID` varchar(255), `CheckoutRequestID` varchar(255), `ResponseDescription` varchar(255), `ResponseCode` int, `CustomerMessage` varchar(255), `age` int, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20221029105940')[0m
+  [1m[36mTRANSACTION (52.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT RELEASE_LOCK('4823492743188718095')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('4823492743188718095', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('4823492743188718095')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/transactions" for ::1 at 2022-10-29 14:40:05 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TransactionsController#create as */*
+  Parameters: {"MerchantRequestID"=>"Hello", "Body"=>{"age"=>23}, "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great", "transaction"=>{"MerchantRequestID"=>"Hello", "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.37ms)
+Completed 200 OK in 11088ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 61277)
+
+
+Started POST "/transactions" for ::1 at 2022-10-29 14:41:21 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by TransactionsController#create as */*
+  Parameters: {"MerchantRequestID"=>"Hello", "Body"=>{"age"=>23}, "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great", "transaction"=>{"MerchantRequestID"=>"Hello", "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great"}}
+[31mUnpermitted parameters: :Body, :transaction. Context: { controller: TransactionsController, action: create, request: #<ActionDispatch::Request:0x00007efc007122c8>, params: {"MerchantRequestID"=>"Hello", "Body"=>{"age"=>23}, "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great", "controller"=>"transactions", "action"=>"create", "transaction"=>{"MerchantRequestID"=>"Hello", "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great"}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:8:in `create'
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO `transactions` (`MerchantRequestID`, `CheckoutRequestID`, `ResponseDescription`, `ResponseCode`, `CustomerMessage`, `age`, `created_at`, `updated_at`) VALUES ('Hello', 'Guys', 'You', 0, 'Great', NULL, '2022-10-29 11:41:21.254805', '2022-10-29 11:41:21.254805')[0m
+  ↳ app/controllers/transactions_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (55.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:8:in `create'
+[active_model_serializers] Rendered TransactionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 201 Created in 99ms (Views: 6.3ms | ActiveRecord: 58.2ms | Allocations: 36208)
+
+
+Started POST "/transactions" for ::1 at 2022-10-29 14:44:58 +0300
+Processing by TransactionsController#create as */*
+  Parameters: {"MerchantRequestID"=>"Hello", "Body"=>{}, "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great", "transaction"=>{"MerchantRequestID"=>"Hello", "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great"}}
+[31mUnpermitted parameters: :Body, :transaction. Context: { controller: TransactionsController, action: create, request: #<ActionDispatch::Request:0x00007efc0ca445e8>, params: {"MerchantRequestID"=>"Hello", "Body"=>{}, "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great", "controller"=>"transactions", "action"=>"create", "transaction"=>{"MerchantRequestID"=>"Hello", "CheckoutRequestID"=>"Guys", "ResponseDescription"=>"You", "ResponseCode"=>0, "CustomerMessage"=>"Great"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO `transactions` (`MerchantRequestID`, `CheckoutRequestID`, `ResponseDescription`, `ResponseCode`, `CustomerMessage`, `age`, `created_at`, `updated_at`) VALUES ('Hello', 'Guys', 'You', 0, 'Great', NULL, '2022-10-29 11:44:58.635552', '2022-10-29 11:44:58.635552')[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (100.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+[active_model_serializers] Rendered TransactionSerializer with ActiveModelSerializers::Adapter::Attributes (0.88ms)
+Completed 201 Created in 113ms (Views: 4.5ms | ActiveRecord: 101.7ms | Allocations: 4201)
+
+
