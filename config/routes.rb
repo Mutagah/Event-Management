@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :transactions
   resources :home_banners, only: [:index]
   resources :users, only: [:index, :create, :show]
   resources :communities, only: [:index, :create, :show]

@@ -71,42 +71,42 @@ puts "Seeding the user_events table"
 
         puts "Events attended by first user"
 
-userEvent1 = Ticket.create(ticket_no:"MusAfri1",user_id:user1.id,event_id:event1.id,is_vip: true,number_of_vip_tickets:1,is_regular: true, number_of_regular_tickets:1, amount:3200 ,phone_number:"0727249154")
+userEvent1 = Ticket.create(ticket_no:"MusAfri1",user_id:user1.id,event_id:event1.id, number_of_vip_tickets:1, number_of_regular_tickets:1, amount:3200 ,phone_number:"0727249154")
 
-userEvent2 = Ticket.create(ticket_no:"MusAfro1",user_id:user1.id,event_id:event2.id,is_vip: true,number_of_vip_tickets:2,is_regular: false,number_of_regular_tickets:0,amount:10000,phone_number:"0727249154")
+userEvent2 = Ticket.create(ticket_no:"MusAfro1",user_id:user1.id,event_id:event2.id,number_of_vip_tickets:2,number_of_regular_tickets:0,amount:10000,phone_number:"0727249154")
 
-userEvent3 = Ticket.create(ticket_no:"BusFinc1",user_id:user1.id, event_id:event3.id,is_vip: false, number_of_vip_tickets: 0,is_regular: true, number_of_regular_tickets:2,amount:2400 ,phone_number:"0727249154")
+userEvent3 = Ticket.create(ticket_no:"BusFinc1",user_id:user1.id, event_id:event3.id,number_of_vip_tickets: 0,number_of_regular_tickets:2,amount:2400 ,phone_number:"0727249154")
 
 #         puts "Events attended by our second user"
 
-userEvent4 = Ticket.create(ticket_no:"MusAfri2",user_id:user3.id,event_id:event1.id, is_vip: false, number_of_vip_tickets:0, is_regular:true, number_of_regular_tickets: 2,amount:2400,phone_number:"0727249154")
+userEvent4 = Ticket.create(ticket_no:"MusAfri2",user_id:user3.id,event_id:event1.id, number_of_vip_tickets:0,number_of_regular_tickets: 2,amount:2400,phone_number:"0727249154")
 
-userEvent5 = Ticket.create(ticket_no:"BusFinc2",user_id:user3.id,event_id:event3.id, is_vip: true, number_of_vip_tickets:3, is_regular: false, number_of_regular_tickets: 0,amount:3600 ,phone_number:"0727249154")
+userEvent5 = Ticket.create(ticket_no:"BusFinc2",user_id:user3.id,event_id:event3.id, number_of_vip_tickets:3, number_of_regular_tickets: 0,amount:3600 ,phone_number:"0727249154")
 
-userEvents6 = Ticket.create(ticket_no:"GamCOD1",user_id:user3.id,event_id:event5.id, is_vip: true, number_of_vip_tickets: 4, is_regular:false, number_of_regular_tickets: 0,amount:4000 ,phone_number:"0727249154")
+userEvents6 = Ticket.create(ticket_no:"GamCOD1",user_id:user3.id,event_id:event5.id, number_of_vip_tickets: 4,number_of_regular_tickets: 0,amount:4000 ,phone_number:"0727249154")
 
     puts "Events attended by our third user"
 
-userEvent7 = Ticket.create(ticket_no:"MusAfro2",user_id:user4.id,event_id:event2.id, is_vip: true, number_of_vip_tickets: 2,is_regular: false, number_of_regular_tickets: 0,amount:10000 ,phone_number:"0727249154")
+userEvent7 = Ticket.create(ticket_no:"MusAfro2",user_id:user4.id,event_id:event2.id, number_of_vip_tickets: 2 ,number_of_regular_tickets: 0,amount:10000 ,phone_number:"0727249154")
 
-userEvent8 = Ticket.create(ticket_no:"BusGooB1",user_id:user4.id,event_id:event4.id, is_vip: false, number_of_vip_tickets: 0, is_regular: true, number_of_regular_tickets: 4,amount:4000 ,phone_number:"0727249154")
+userEvent8 = Ticket.create(ticket_no:"BusGooB1",user_id:user4.id,event_id:event4.id, number_of_vip_tickets: 0,number_of_regular_tickets: 4,amount:4000 ,phone_number:"0727249154")
 
-userEvent9 = Ticket.create(ticket_no:"GamChekC1",user_id:user4.id,event_id:event6.id, is_vip: true , number_of_vip_tickets: 6, is_regular: false, number_of_regular_tickets: 0,amount:12000 ,phone_number:"0727249154")
+userEvent9 = Ticket.create(ticket_no:"GamChekC1",user_id:user4.id,event_id:event6.id, number_of_vip_tickets: 6, number_of_regular_tickets: 0,amount:12000 ,phone_number:"0727249154")
 
 
     puts "Events the current and only organiser has created"
 
-userEvent13 = Ticket.create(ticket_no:"OgMusAfri",user_id:user2.id,event_id:event1.id, is_vip: false, number_of_vip_tickets: 0, is_regular: false, number_of_regular_tickets:0,amount:0 ,phone_number:"0000000000")
+userEvent13 = Ticket.create(ticket_no:"OgMusAfri",user_id:user2.id,event_id:event1.id, number_of_vip_tickets: 0, number_of_regular_tickets:0,amount:0 ,phone_number:"0000000000")
 
-userEvent14 = Ticket.create(ticket_no:"OgMusAfr",user_id:user2.id,event_id:event2.id,is_vip: false , number_of_vip_tickets: 0, is_regular: false, number_of_regular_tickets:0,amount:0 ,phone_number:"000000000")
+userEvent14 = Ticket.create(ticket_no:"OgMusAfr",user_id:user2.id,event_id:event2.id,number_of_vip_tickets: 0, number_of_regular_tickets:0,amount:0 ,phone_number:"000000000")
 
-userEvent15 = Ticket.create(ticket_no:"OgBusFinc",user_id:user2.id,event_id:event3.id,is_vip: false , number_of_vip_tickets: 0, is_regular: false, number_of_regular_tickets:0,amount:0 ,phone_number:"000000000")
+userEvent15 = Ticket.create(ticket_no:"OgBusFinc",user_id:user2.id,event_id:event3.id,number_of_vip_tickets: 0, number_of_regular_tickets:0,amount:0 ,phone_number:"000000000")
 
-userEvent16 = Ticket.create(ticket_no:"OgBusGooB",user_id:user2.id,event_id:event4.id, is_vip: false , number_of_vip_tickets: 0, is_regular: false, number_of_regular_tickets:0, amount:0 ,phone_number:"0000000000")
+userEvent16 = Ticket.create(ticket_no:"OgBusGooB",user_id:user2.id,event_id:event4.id, number_of_vip_tickets: 0, number_of_regular_tickets:0, amount:0 ,phone_number:"0000000000")
 
-userEvent17 = Ticket.create(ticket_no:"OgGamC0D",user_id:user2.id,event_id:event5.id, is_vip: false , number_of_vip_tickets: 0, is_regular: false, number_of_regular_tickets:0, amount:0 ,phone_number:"0000000000")
+userEvent17 = Ticket.create(ticket_no:"OgGamC0D",user_id:user2.id,event_id:event5.id, number_of_vip_tickets: 0, number_of_regular_tickets:0, amount:0 ,phone_number:"0000000000")
 
-userEvent17 = Ticket.create(ticket_no:"OgGamChekC",user_id:user2.id,event_id:event6.id, is_vip: false , number_of_vip_tickets: 0, is_regular: false, number_of_regular_tickets:0,amount:0 ,phone_number:"0000000000")
+userEvent18 = Ticket.create(ticket_no:"OgGamChekC",user_id:user2.id,event_id:event6.id, number_of_vip_tickets: 0, number_of_regular_tickets:0,amount:0 ,phone_number:"0000000000")
 
 # puts "End of seeding database tables"
 

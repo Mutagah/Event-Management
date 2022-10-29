@@ -26,7 +26,6 @@ gem 'mpesa_stk'
 
 gem 'dotenv'
 
-gem 'phony_rails'
 
 gem "faker"
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

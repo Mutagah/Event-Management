@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_26_111518) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_29_105940) do
   create_table "abouts", charset: "utf8mb4", force: :cascade do |t|
     t.string "about_img"
     t.text "about_description"
@@ -66,12 +66,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_111518) do
     t.string "ticket_no"
     t.integer "user_id"
     t.integer "event_id"
-    t.boolean "is_vip"
     t.integer "number_of_vip_tickets"
-    t.boolean "is_regular"
     t.integer "number_of_regular_tickets"
     t.integer "amount"
     t.string "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "transactions", charset: "utf8mb4", force: :cascade do |t|
+    t.string "MerchantRequestID"
+    t.string "CheckoutRequestID"
+    t.string "ResponseDescription"
+    t.integer "ResponseCode"
+    t.string "CustomerMessage"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
